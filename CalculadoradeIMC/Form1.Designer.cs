@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnCalcular = new System.Windows.Forms.Button();
-            this.txtPeso = new System.Windows.Forms.TextBox();
-            this.txtAltura = new System.Windows.Forms.TextBox();
             this.txtIMC = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,6 +36,10 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTabela = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.NumericUpDown();
+            this.txtPeso = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAltura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeso)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCalcular
@@ -50,20 +52,6 @@
             this.btnCalcular.Text = "CALCULAR";
             this.btnCalcular.UseVisualStyleBackColor = true;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Location = new System.Drawing.Point(83, 158);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(84, 20);
-            this.txtPeso.TabIndex = 1;
-            // 
-            // txtAltura
-            // 
-            this.txtAltura.Location = new System.Drawing.Point(83, 132);
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(84, 20);
-            this.txtAltura.TabIndex = 2;
             // 
             // txtIMC
             // 
@@ -119,8 +107,35 @@
             this.txtTabela.ForeColor = System.Drawing.Color.Lime;
             this.txtTabela.Location = new System.Drawing.Point(28, 239);
             this.txtTabela.Name = "txtTabela";
-            this.txtTabela.Size = new System.Drawing.Size(84, 13);
+            this.txtTabela.Size = new System.Drawing.Size(144, 13);
             this.txtTabela.TabIndex = 8;
+            // 
+            // txtAltura
+            // 
+            this.txtAltura.DecimalPlaces = 2;
+            this.txtAltura.Location = new System.Drawing.Point(83, 132);
+            this.txtAltura.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(85, 20);
+            this.txtAltura.TabIndex = 9;
+            this.txtAltura.ValueChanged += new System.EventHandler(this.txtAltura_ValueChanged);
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.DecimalPlaces = 2;
+            this.txtPeso.Location = new System.Drawing.Point(83, 158);
+            this.txtPeso.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(85, 20);
+            this.txtPeso.TabIndex = 10;
             // 
             // Form1
             // 
@@ -128,18 +143,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(180, 276);
+            this.Controls.Add(this.txtPeso);
+            this.Controls.Add(this.txtAltura);
             this.Controls.Add(this.txtTabela);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIMC);
-            this.Controls.Add(this.txtAltura);
-            this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.btnCalcular);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtAltura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,8 +165,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnCalcular;
-        private System.Windows.Forms.TextBox txtPeso;
-        private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.TextBox txtIMC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -157,6 +172,8 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTabela;
+        private System.Windows.Forms.NumericUpDown txtAltura;
+        private System.Windows.Forms.NumericUpDown txtPeso;
     }
 }
 
